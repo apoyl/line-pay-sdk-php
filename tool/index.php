@@ -70,7 +70,7 @@ $logs = isset($_SESSION['logs']) ? $_SESSION['logs'] : [];
 </head>
 <body>
 <div style="padding:30px 10px; max-width: 600px; margin: auto;">
-  <h3>LINE Pay API Tool</h3>
+  <h3>LINE Pay API Tool <a href="https://github.com/yidas/line-pay-sdk-php"><img src="https://github.com/favicon.ico" height="20" width="20"></a></h3>
 
   <?php if($route=='order'): ?>
   <?php $status = (!isset($order['isSuccessful'])) ? 'none' : (($order['isSuccessful']) ? 'successful' : 'failed') ?>
@@ -306,6 +306,13 @@ $logs = isset($_SESSION['logs']) ? $_SESSION['logs'] : [];
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="submit">Submit</button>
             </div>
+          </div>
+        </div>
+        <hr>
+        <div class="form-group">
+          <label>Rewrite Request Body <font color="#cccccc"><i>(JSON string will be decoded then encoded)</i></font></label>
+          <div class="input-group">
+            <textarea class="form-control" name="requestBody" id="" rows="4" style="font-size: 9pt;"></textarea>
           </div>
         </div>
       </div>
